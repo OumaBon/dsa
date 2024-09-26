@@ -1,0 +1,113 @@
+real-world scenario or problem, requiring an understanding of how hash tables can be applied efficiently.
+
+1. Implementing an LRU Cache (Caching System)
+Design and implement an LRU (Least Recently Used) Cache using hash tables and a doubly linked list. The cache should support the following operations:
+
+get(key): Fetch the value of the key if it exists in the cache. Otherwise, return -1.
+put(key, value): Insert or update the value of the key. If the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.
+The cache should operate in O(1) time for both operations.
+
+Bonus: Handle scenarios where the cache needs to be distributed across multiple servers.
+
+2. Designing a Symbol Table for a Compiler
+You are tasked with implementing a symbol table for a new programming language's compiler. The symbol table must store variables, functions, and classes with the following operations:
+
+addSymbol(symbol, type, scope): Add a symbol to the symbol table with its associated type and scope.
+lookup(symbol): Retrieve information about a symbol, including its type and scope. If the symbol is not found, return an error.
+The symbol table must handle nested scopes (e.g., functions inside functions) and support efficient lookup for variables in the most recent scope.
+
+3. Find Anagrams in a Large Dataset
+Given a large dataset of words (in the order of millions), design an efficient algorithm to group all anagrams together using a hash table. Your solution should:
+
+Use a hash function that allows you to group words with the same set of characters.
+Optimize both time and space complexity.
+Handle edge cases where words have different lengths but could still be anagrams of one another.
+Bonus: Extend the solution to handle streaming input, where new words keep arriving in real-time.
+
+4. Optimizing Web Cache with Hash Tables
+You are responsible for designing a caching system for a large-scale web application, which caches frequently accessed URLs. The cache needs to:
+
+Track the frequency of access for each URL using a hash table.
+Evict URLs based on a combination of LRU (Least Recently Used) and LFU (Least Frequently Used) policies.
+Design a system that efficiently handles millions of concurrent requests and evicts items in O(1) time.
+
+5. File System Metadata Lookup
+In a large-scale file system (e.g., Linux ext4), files are stored in directories, and each file has metadata associated with it. Design a hash table-based directory lookup system that:
+
+Supports fast retrieval of file metadata (e.g., file size, last modified time) based on the file's name.
+Handles hash collisions effectively, ensuring the system scales well as more files are added.
+Supports nested directories and can handle directory paths like /home/user/documents/file.txt.
+Bonus: Optimize the system for situations where millions of files are frequently added or removed from the directory.
+
+6. Detecting Duplicates in a Distributed System
+You are tasked with building a distributed system that processes millions of transactions every second. The system must detect and discard duplicate transactions in real-time. Implement a solution using hash tables that:
+
+Can handle distributed transactions across multiple servers.
+Ensures no duplicates are processed, even if they arrive at different servers.
+Optimizes for minimal memory usage, given the massive scale of data.
+Bonus: Ensure fault tolerance and recovery in case one of the servers fails.
+
+7. Rabin-Karp Algorithm for Substring Search
+Implement the Rabin-Karp algorithm to search for all occurrences of a given pattern in a large text. Your solution should:
+
+Use a rolling hash to compute the hash values of substrings efficiently.
+Handle hash collisions gracefully.
+Optimize for cases where the text and pattern are very large (e.g., in the order of gigabytes).
+Bonus: Extend the solution to search for multiple patterns at once, using a dictionary of hash tables to store the hash values of each pattern.
+
+8. Consistent Hashing for Load Balancing
+Design a load-balancing system that uses consistent hashing to distribute incoming web traffic across multiple servers. Your design should:
+
+Map client requests (based on IP addresses) to servers using a hash function.
+Ensure minimal disruption when servers are added or removed from the system.
+Support millions of requests per second and provide O(1) lookup time for assigning a request to the appropriate server.
+Bonus: Handle server failures gracefully and redistribute traffic accordingly.
+
+9. Design a Resume Deduplication System
+Build a resume deduplication system for an HR platform where candidates can upload their resumes. The system must detect duplicate resumes using hash tables, considering:
+
+Resumes may have slight differences (e.g., formatting changes or synonyms), but the system should still flag them as duplicates.
+Optimize for scalability, as the platform handles millions of resumes.
+Handle cases where multiple resumes are being uploaded simultaneously.
+Bonus: Allow the system to suggest potential duplicates with a similarity score, even when the resumes are not exactly the same.
+
+10. Design an Autocomplete System
+Implement an autocomplete system that suggests words based on a prefix entered by the user. Your system should:
+
+Use a hash table to map prefixes to a list of possible completions.
+Optimize for fast lookup and minimal memory usage.
+Support real-time suggestions as the user types each character.
+Bonus: Improve the system by ranking suggestions based on the frequency of usage and personalizing suggestions for each user.
+
+11. Two-Sum with Multiple Arrays
+You are given several sorted arrays and a target sum. Design an efficient algorithm to find pairs of numbers, one from each array, that sum up to the target. Your solution should:
+
+Use hash tables to optimize the lookup time for each potential pair.
+Work efficiently with arrays of varying lengths.
+Handle edge cases where no pairs exist.
+Bonus: Extend the problem to find k-sums, where k arrays are involved.
+
+12. Cryptographic Hashing for Passwords
+Design a system for securely storing and verifying passwords using hash tables and cryptographic hash functions. Your solution should:
+
+Hash passwords with a salt to prevent rainbow table attacks.
+Support fast password verification while ensuring the system remains secure against brute force attacks.
+Handle password resets securely, ensuring the old hash is invalidated and a new hash is generated for the updated password.
+Bonus: Implement rate-limiting to protect against denial-of-service (DoS) attacks on the login system.
+
+13. Optimizing Routing Tables in Routers
+Design a router's routing table that uses hash tables to quickly look up the next hop for an IP address. Your system should:
+
+Store IP address ranges and map them to corresponding next hops.
+Optimize for fast lookups even as the network grows in size and complexity.
+Handle IP address collisions (different devices with the same hash).
+Bonus: Implement failover handling in case a next hop becomes unavailable.
+
+14. Distributed Data Deduplication
+Build a distributed deduplication system that can handle large amounts of data across multiple servers. Your system must:
+
+Use hash tables to detect duplicate blocks of data across different servers.
+Ensure minimal bandwidth usage by detecting and avoiding the transmission of duplicate data.
+Handle edge cases where slight modifications in the data result in different hash values.
+Bonus: Implement data redundancy and recovery in case some servers fail.
+
